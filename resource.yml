@@ -1,0 +1,8 @@
+resources:
+  - name: git_vijay
+    type: GitRepo
+    configuration:
+      gitProvider: vijay
+      path: vijayreddy1991/test_templates
+      branches:     
+        include: master
