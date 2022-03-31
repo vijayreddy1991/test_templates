@@ -10,7 +10,7 @@ pipelines:
             type: image
         execution:
           onExecute:
-            - printenv 
+            - printenv {{ .Values.foo.bar }}
       - name: basic2
         type: Bash
         configuration:
@@ -20,7 +20,7 @@ pipelines:
             - name: basic1
         execution:
           onExecute:
-            - printenv
+            - printenv {{ .Values.foo.bar }}
 
       {{ if eq "{{gitBranch}}" "release" }}
       - name: basic3
@@ -32,5 +32,5 @@ pipelines:
             - name: basic2
         execution:
           onExecute:
-            - printenv
+            - printenv {{ .Values.foo.bar }}
       {{ end }}
