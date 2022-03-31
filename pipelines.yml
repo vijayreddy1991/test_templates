@@ -5,12 +5,12 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: appRepo
+            - name: git_vijay
           runtime:
             type: image
         execution:
           onExecute:
-            - printenv {{ .Values.foo.bar }}
+            - printenv 
       - name: basic2
         type: Bash
         configuration:
