@@ -2,7 +2,7 @@ resources:
   - name: git_vijay
     type: GitRepo
     configuration:
-      gitProvider: vijay
-      path: vijayreddy1991/test_templates
+      gitProvider: {{ .Values.myRepo.gitProvider }}
+      path: {{ .Values.myRepo.path }}
       branches:     
-        include: master
+        include: ^{{gitBranch}}$ 
