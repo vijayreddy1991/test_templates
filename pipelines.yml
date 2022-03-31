@@ -1,1 +1,36 @@
+pipelines:
+  - name: basic
+    steps:
+      - name: basic1
+        type: Bash
+        configuration:
+          inputResources:
+            - name: appRepo
+          runtime:
+            type: image
+        execution:
+          onExecute:
+            - printenv {{ .Values.foo.bar }}
+      - name: basic2
+        type: Bash
+        configuration:
+          runtime:
+            type: image
+          inputSteps:
+            - name: basic1
+        execution:
+          onExecute:
+            - printenv
 
+      {{ if eq "{{gitBranch}}" "release" }}
+      - name: basic3
+        type: Bash
+        configuration:
+          runtime:
+            type: image
+          inputSteps:
+            - name: basic2
+        execution:
+          onExecute:
+            - printenv
+#       {{ end }}
