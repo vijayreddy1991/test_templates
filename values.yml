@@ -1,1 +1,5 @@
-
+foo:
+  name: bar
+myRepo:
+  gitProvider: vijay
+  path: vijareddy1991/test_templates
