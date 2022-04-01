@@ -1,6 +1,15 @@
 template: true
 valuesFilePath: pipeline-values.yml
 
+resources:
+  - name: git_vijay
+    type: GitRepo
+    configuration:
+      gitProvider: {{ .Values.myRepo.gitProvider }}
+      path: {{ .Values.myRepo.path }}
+      branches:     
+        include: ^{{gitBranch}}$ 
+
 pipelines:
   - name: basic
     steps:
