@@ -1,3 +1,7 @@
+foo:
+  bar: 1111
+  baz: 24
+  zoo: 34
 myRepo:
   gitProvider: vijay
   path: vijareddy1991/test_templates
