@@ -5,8 +5,8 @@ resources:
   - name: git_vijay
     type: GitRepo
     configuration:
-      gitProvider: {{ .Values.myRepo.gitProvider }}
-      path: {{ .Values.myRepo.path }}
+      gitProvider: {{ .pipeline-values.myRepo.gitProvider }}
+      path: {{ .pipeline-values.myRepo.path }}
       branches:     
         include: ^{{gitBranch}}$ 
 
