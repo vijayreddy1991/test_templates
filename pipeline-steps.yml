@@ -1,5 +1,5 @@
 template: true
-valuesFilePath: ./pipelineValues.yml
+valuesFilePath: pipelineValues.yml
 
 resources:
   - name: git_vijay
