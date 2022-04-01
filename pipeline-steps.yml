@@ -6,13 +6,12 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            # Sets up step to be triggered when there are commit events to myFirstRepo
             - name: git_vijay
           runtime:
             type: image
         execution:
           onExecute:
-            - printenv {{ .Values.foo.bar }}
+            - printenv 
       - name: basic2
         type: Bash
         configuration:
@@ -22,7 +21,7 @@ pipelines:
             - name: basic1
         execution:
           onExecute:
-            - printenv {{ .Values.foo.baz }}
+            - printenv 
 
       {{ if eq "{{gitBranch}}" "master" }}
       - name: basic3
@@ -34,5 +33,4 @@ pipelines:
             - name: basic2
         execution:
           onExecute:
-            - printenv {{ .Values.foo.zoo }}
-      {{ end }}      
+            - printenv   
