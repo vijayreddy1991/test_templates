@@ -45,4 +45,14 @@ pipelines:
         execution:
           onExecute:
             - printenv   
+      - name: basic4
+        type: Bash
+        configuration:
+          runtime:
+            type: image
+          inputSteps:
+            - name: basic3
+        execution:
+          onExecute:
+            - printenv             
     {{- end }}  
