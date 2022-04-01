@@ -5,8 +5,8 @@ resources:
   - name: git_vijay
     type: GitRepo
     configuration:
-      gitProvider: {{ .pipeline-values.myRepo.gitProvider }}
-      path: {{ .pipeline-values.myRepo.path }}
+      gitProvider: vijay #{{ .pipeline-values.myRepo.gitProvider }}
+      path: vijayreddy1991/test_templates #{{ .pipeline-values.myRepo.path }}
       branches:     
         include: ^{{gitBranch}}$ 
 
