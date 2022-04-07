@@ -34,7 +34,8 @@ pipelines:
           onExecute:
             - printenv 
 
-      [[ if {{ "{{gitBranch}}" = "^release" }} ]]
+      {{- if {{ "{{gitBranch}}" = "^release" }} }}
+#       {{- if .Values.BuildInfo }}
       - name: basic3
         type: Bash
         configuration:
